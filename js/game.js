@@ -154,6 +154,13 @@ window.onload = function() {
             again = document.querySelector('.again');
             win.className = 'win notNone';
 
+            for (let i = 0; i < 21; i++) {
+                chess[i] = [];
+                for (let j = 0; j < 21; j++) {
+                    chess[i][j] = 0;
+                }
+            }
+
             if (data.win == 'white') {
                 go = false;
                 drawChess(data.i, data.j, false);
