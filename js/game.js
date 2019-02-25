@@ -93,14 +93,15 @@ window.onload = function() {
             menu.className = 'menuNone';
             tips.innerHTML += `<p>${data.msg}</p>`;
             role = data.role;
-            for (let i = 0; i < 21; i++) {
-                for (let j = 0; j < 21; j++) {
-                    if (data.chessBoard[i][j] == 1) {
-                        cover.className = "cover coverNone";
-                        drawChess(i, j, true);
-                    } else if (data.chessBoard[i][j] == 2) {
-                        cover.className = "cover coverNone";
-                        drawChess(i, j, false);
+            if (data.start == "yes") {
+                cover.className = "cover coverNone";
+                for (let i = 0; i < 21; i++) {
+                    for (let j = 0; j < 21; j++) {
+                        if (data.chessBoard[i][j] == 1) {
+                            drawChess(i, j, true);
+                        } else if (data.chessBoard[i][j] == 2) {
+                            drawChess(i, j, false);
+                        }
                     }
                 }
             }
