@@ -25,7 +25,8 @@ window.onload = function() {
     drawChessLine();    // 初始化棋盘
 
     online.addEventListener('click', () => {
-        socket = io.connect('ws://www.credog.top/fivechess');
+        socket = io.connect('http://wxtest.credog.top');
+        // socket = io.connect('http://localhost:8001');
         // socket = io.connect('wss://localhost:8001');
 
         // websocket时间
