@@ -252,6 +252,7 @@ window.onload = function() {
                     msg: '白方确认开始'
                 });
             }
+            confirm.className = "confirm";
         });
 
         canvas.addEventListener('click', (e) => {
