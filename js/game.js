@@ -26,8 +26,6 @@ window.onload = function() {
 
     online.addEventListener('click', () => {
         socket = io.connect('http://wxtest.credog.top');
-        // socket = io.connect('http://localhost:8001');
-        // socket = io.connect('wss://localhost:8001');
 
         // websocket时间
         socket.on('connect', data => {
@@ -215,6 +213,9 @@ window.onload = function() {
             console.log(data);
             tips.innerHTML += `<p>${data.msg}</p>`;
             cover.className = "cover";
+            if (role == 'white') {
+                confirm.className = "confirm confirmIn";
+            }
         });
 
         // 白方断开连接
@@ -222,6 +223,9 @@ window.onload = function() {
             console.log(data);
             tips.innerHTML += `<p>${data.msg}</p>`;
             cover.className = "cover";
+            if (role == 'black') {
+                confirm.className = "confirm confirmIn";
+            }
         });
 
         // 有观众断开连接
